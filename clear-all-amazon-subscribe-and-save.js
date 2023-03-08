@@ -12,8 +12,15 @@ items = document.getElementsByClassName("subscription-card");
 let i = 0;
 let id = "";
 let url = "";
-while (i < items.length) {
+let xhttp = new XMLHttpRequest();
+const iteration_len = items.length;
+
+while (i < iteration_len) {
+    console.log('Deleting ' + i);
     id = items[i].getAttribute("data-subscription-id");
     url = "https://www.amazon.com/auto-deliveries/ajax/cancelSubscriptionAction?deviceType=desktop&deviceContext=web&actionType=cancelSubscription&subscriptionId=" + id
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", url, true);
+    xhttp.send();
     i++;
-}
+};
