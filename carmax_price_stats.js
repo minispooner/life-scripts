@@ -16,7 +16,7 @@ if (container) {
     let text = div.textContent.trim();
 
     // Match: Year + Make + Model + Trim + Cost + Miles
-    let match = text.match(/(\d{4})\s+Chevrolet\s+Suburban\s+1500\s+([A-Za-z0-9]+)\s*\$([\d,]+).*?(\d{1,3}(?:K)?\s*mi)/i);
+    let match = text.match(/(\d{4})\s+Chevrolet\s+Suburban\s+1500\s+([A-Za-z0-9 ]+)\s*\$([\d,]+).*?(\d{1,3}(?:K)?\s*mi)/i);
     if (match) {
       let year = match[1];
       let trim = match[2];
